@@ -1,0 +1,21 @@
+﻿@model IEnumerable<B08C06_w01.Models.EMployee>
+<h1>
+    PowerSoftIT's EMploee
+</h1>
+<a asp-action="Create" asp-controller="Employee" >Add</a>
+    <table class="table table-bordered">
+    @foreach (var employee in Model)
+    {
+        <tr>
+            <td>
+                @employee.Name
+            </td>
+            <td>
+                @employee.Email
+            </td>
+            <td>
+                <img src="@Url.Content( employee.PicturePath)" alt="@employee.Name" style="width: 100px; height: 100px;" />
+            </td>
+        </tr>
+    })
+    </table>
