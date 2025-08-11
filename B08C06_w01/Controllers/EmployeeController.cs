@@ -62,7 +62,7 @@ namespace B08C06_w01.Controllers
                 ModelState.AddModelError(" ",  message);
             }
 
-            return View();
+            return View(eMployee);
         }
         public IActionResult Edit(int? id)
         {

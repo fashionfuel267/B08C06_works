@@ -8,10 +8,12 @@
     <div>
         <label for="Name">Name</label>
         <input type="text" asp-for="Name" id="Name" />
+        <span  asp-validation-for="Name"></span>
     </div>
     <div>
         <label for="Email">Email</label>
         <input type="email" asp-for="Email" id="Email" placeholder="Email" />
+        <span asp-validation-for="Email"></span>
     </div>
     <div>
         <label>Picture </label>
@@ -27,12 +29,8 @@
             }
             else
             {
-                 
 
                     <input type="file" id="Picture" name="Picture" />
-               
-              
-
             }
             <div id="enterpic">
 
@@ -46,6 +44,9 @@
 
 </form>
 @section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
     <script>
         // document.getElementById("change").addEventListener("click", function (event) {
         //     event.preventDefault();
