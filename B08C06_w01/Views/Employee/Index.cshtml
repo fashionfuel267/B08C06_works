@@ -16,6 +16,9 @@
             <td>
                 <img src="@Url.Content( employee.PicturePath)" alt="@employee.Name" style="width: 100px; height: 100px;" />
             </td>
+            <td>
+                <a asp-action="Edit" asp-controller="Employee" asp-route-id="@employee.Id">Edit</a>
+            </td>
         </tr>
     })
     </table>

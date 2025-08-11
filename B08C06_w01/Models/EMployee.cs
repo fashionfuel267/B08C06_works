@@ -9,6 +9,6 @@ namespace B08C06_w01.Models
         public string Email { get; set; }
         public string? PicturePath { get; set; }
         [NotMapped]
-        public IFormFile Picture { get; set; }
+        public IFormFile? Picture { get; set; }
     }
 }

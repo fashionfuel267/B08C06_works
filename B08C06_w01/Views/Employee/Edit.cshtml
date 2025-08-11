@@ -1,0 +1,69 @@
+﻿ @model B08C06_w01.Models.EMployee
+
+@{
+    ViewData["Title"] = "Edit Employee";
+}
+<h2>Edit  Employee @Model.Name</h2>
+<form asp-action="Edit" asp-controller="Employee" method="post" enctype="multipart/form-data">
+    <div>
+        <label for="Name">Name</label>
+        <input type="text" asp-for="Name" id="Name" />
+    </div>
+    <div>
+        <label for="Email">Email</label>
+        <input type="email" asp-for="Email" id="Email" placeholder="Email" />
+    </div>
+    <div>
+        <label>Picture </label>
+       
+        <div>
+            @if (Model.PicturePath != null)
+            {
+                <div id="displaypic">
+                <img src="@Url.Content(Model.PicturePath)" alt="Employee Picture" style="max-width: 200px; max-height: 200px;" />
+                <input type="hidden"   asp-for="PicturePath"/>
+                <button id="change" type="button">Change Picture</button>
+                </div>
+            }
+            else
+            {
+                 
+
+                    <input type="file" id="Picture" name="Picture" />
+               
+              
+
+            }
+            <div id="enterpic">
+
+                <input type="file" id="Picture" name="Picture" style="display:none" />
+            </div>
+        </div>
+    </div>
+    <div>
+        <button class="btn btn-primary mt-4" type="submit">Update</button>
+    </div>
+
+</form>
+@section Scripts {
+    <script>
+        // document.getElementById("change").addEventListener("click", function (event) {
+        //     event.preventDefault();
+        //   //  alert("Hi")
+        //     // document.getElementById("enterpic").style.display = "block";
+        //     // document.getElementById("displaypic").style.display = "none";
+        // });
+        $(document).ready(function(){
+             $("#enterpic").hide();
+
+               $("#change").click(function(){
+            
+            $("#displaypic").hide();
+            $("#enterpic").show();
+            $("#Picture").click();
+        })
+        })
+      
+    </script>
+}
+
